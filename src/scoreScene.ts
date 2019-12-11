@@ -18,10 +18,12 @@ export class ScoreScene extends Phaser.Scene {
 
   public create(): void {
     const resultText: string = "Your score is " + this.score + "!";
-    this.result = this.add.text(200, 250, resultText, getFontSettings(48));
+    this.result = this.add.text(this.game.canvas.width / 2, 250, resultText, getFontSettings(48));
+    this.result.setOrigin(0.5);
 
     const hintText: string = "Click to restart";
-    this.hint = this.add.text(300, 350, hintText, getFontSettings(48));
+    this.hint = this.add.text(this.game.canvas.width / 2, 350, hintText, getFontSettings(48));
+    this.hint.setOrigin(0.5);
 
     this.input.on("pointerdown", function(/*pointer*/) {
       this.scene.start("WelcomeScene");

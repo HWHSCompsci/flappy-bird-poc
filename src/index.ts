@@ -5,7 +5,7 @@ import { WelcomeScene } from "./welcomeScene";
 
 const config: Phaser.Types.Core.GameConfig = {
   backgroundColor: "#4EC0CA",
-  height: 600,
+  height: 900,
   parent: "game",
   physics: {
     arcade: {
@@ -14,16 +14,17 @@ const config: Phaser.Types.Core.GameConfig = {
     default: "arcade",
   },
   scene: [WelcomeScene, GameScene, ScoreScene],
-  title: "Starfall",
-  width: 800,
+  title: "FlappyBird",
+  type: Phaser.AUTO,
+  width: 1600,
 };
 
-export class StarfallGame extends Phaser.Game {
+export class FlappyBirdGame extends Phaser.Game {
   constructor(conf: Phaser.Types.Core.GameConfig) {
     super(conf);
   }
 }
 
 window.onload = () => {
-  const game = new StarfallGame(config);
+  const game = new FlappyBirdGame(config);
 };
